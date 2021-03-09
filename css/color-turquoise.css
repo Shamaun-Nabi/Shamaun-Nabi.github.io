@@ -19,6 +19,7 @@
 .skill > h4,
 .front-person-links > ul > li > a:hover{
 	color:#45B69C;
+	font-size: 24px;
 }
 .testimonials-slider .owl-controls > .owl-pagination > .owl-page > span,
 .form-control:focus,
