@@ -1960,6 +1960,10 @@
 										I'm available for freelancing. If you want something to be built or just to say hi, feel free to shoot me a message.
 									</p>
 								</div>
+
+								<div class="col-sm-12 col-lg-5 form-message">
+									<span class="output_message text-center font-weight-600 text-uppercase"></span>
+								</div>
 							
 							</div>
 						</div>
@@ -1967,7 +1971,7 @@
 						<div class='row' >
 							<div class='col-md-8 col-md-offset-2' >
 								
-								<form id='contact-form' class='contact-form' action='https://script.google.com/macros/s/AKfycbzYWybGxZfejVTtLJuIHlU8CxUhR1l1zQLOW9Jr/exec' method='post' data-toggle='validator' autocomplete="off" name="google-sheet">
+								<!-- <form id='contact-form' class='contact-form' action='https://script.google.com/macros/s/AKfycbzYWybGxZfejVTtLJuIHlU8CxUhR1l1zQLOW9Jr/exec' method='post' data-toggle='validator' autocomplete="off" name="google-sheet">
 									
 									<div id='contact-form-result' ></div>
 									
@@ -1976,7 +1980,7 @@
 										<div class='col-md-6' >
 											
 											<div class='form-group' >
-												<input type='text' class='form-control' name="name" placeholder='Name' required=""/>
+												<input type='text' class='form-control' name="name" placeholder='Name' required>
 												
 												<div class='help-block with-errors' ></div>
 											</div>
@@ -1985,7 +1989,7 @@
 										
 										<div class='col-md-6' >
 											<div class='form-group' >
-												<input type='email' class='form-control'name="email" placeholder='Email' required=""/>
+												<input type='email' class='form-control'name="email" placeholder='Email' required>
 												
 												<div class='help-block with-errors' ></div>
 							
@@ -2000,16 +2004,37 @@
 									</div>
 									
 									<div class='form-group' >
-										<textarea rows='5' class='form-control' name="message" placeholder='Message' required =""/></textarea>
+										<textarea rows='5' class='form-control' name="message" placeholder='Message' required></textarea>
 										<div class='help-block with-errors' ></div>
 									</div>
 									
 									<div class='form-group text-center' >
-										<button type='submit' class='symp-btn' onclick="clearForm()" >Send Message</button>
+										<button type='submit' class='symp-btn'>Send Message</button>
 									</div>
 									
-									
+								</form> -->
+
+								<form id="contactform" class="contactform" method="post" name="google-sheet">
+									<div class="contactform">
+										<div class="row">
+											<div class=" form-outline mb-4 ">
+												<label class="form-label" for="form4Example1">Name</label>
+												<input type="text" class="form-control" name="name" placeholder="YOUR NAME" value="" required>
+											</div>
+											<div class=" form-outline mb-4">
+												<label class="form-label" for="form4Example1"> Email</label>
+												<input type="email" class="form-control" name="email" placeholder="YOUR EMAIL" value="" required>
+											</div>
+											<div class=" form-outline mb-4">
+												<label class="form-label" for="form4Example1">Message</label>
+												<textarea class="form-control" name="message" placeholder="YOUR MESSAGE" rows="4" value="" required></textarea>
+												<button type="submit" onclick="clearForm()" name="submit" value="Login" class="btn btn-block mb-4 btn-success ">Send Message</button>
+											</div>
+
+										</div>
+									</div>
 								</form>
+						
 							</div>
 						</div>
 
@@ -2084,13 +2109,6 @@
 			/Mail Script
 		===============================================================================-->
 
-
-	  
-		
-
-
-
-		
 		<!--=============================================================================
 			JavaScript Files
 		===============================================================================-->
@@ -2103,7 +2121,9 @@
 		<script src='js/validator.min.js' ></script>
 		<script src='js/smoothscroll.js' ></script>
 		<script src='js/script.js' ></script>
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+		<script src="js/form-submission-handler.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <!-- 
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbz3pHuIgA6prV7dZNemLWZ2L46TGACOk-R8dAgfuUE7f7zbbC8/exec'
 		const form = document.forms['google-sheet'] -->
@@ -2111,16 +2131,12 @@
 		<script>
             const scriptURL = 'https://script.google.com/macros/s/AKfycbz3pHuIgA6prV7dZNemLWZ2L46TGACOk-R8dAgfuUE7f7zbbC8/exec'
 		const form = document.forms['google-sheet']
+		// const ab=swal("Here's a message!")
           
             form.addEventListener('submit', e => {
               e.preventDefault()
 			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-			  .then(response => alert(swal({
-  title: "Message Sent Successfully!",
-  text: "I will Response You Soon....",
-  icon: "success",
-  button: "Thank You So Much!",
-})))
+			//   .then(response =>alert(swal("hi")))
 				.catch(error => console.error('Error!', error.message))
             });
 </script>
@@ -2128,14 +2144,12 @@
 <script>
 	function clearForm() {
 		setTimeout(function () {
-			document.getElementById("contact-form").reset();
+			document.getElementById("contactform").reset();
 		}, 100);
 	}
 
-
 </script>
-		
-		
+
 		
 	</body>
 	
