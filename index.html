@@ -495,7 +495,7 @@
 								
 								<div class='timeline-desc' >
 									
-									<h4>2018-2023</h4>
+									<h4>2018-Present</h4>
 									
 								</div>
 								
@@ -514,7 +514,7 @@
 
 								<div class='timeline-desc' >
 									
-									<h4>2014-2016</h4>
+									<h4>Passing Year-2016</h4>
 									
 								</div>
 								
@@ -526,7 +526,7 @@
 								
 								<div class='timeline-content' >
 									
-									<h4>Higher Secondary School Certificate</h4>
+									<h4>Higher Secondary Certificate</h4>
 									<span>Bonarpara Degree College</span>
 									<span>GPA 4.67</span>
 									
@@ -538,7 +538,7 @@
 								
 								<div class='timeline-desc' >
 									
-									<h4>2012-2014</h4>
+									<h4>Passing Year-2014</h4>
 									
 								</div>
 								
@@ -561,7 +561,7 @@
 								
 								<div class='timeline-desc' >
 									
-									<h4>2021</h4>
+									<h4>2021-Present</h4>
 									
 								</div>
 								
@@ -612,7 +612,7 @@
 					</div>
 				</div>
 				
-				<div class='hobbies-block bg-lightgray section-block' >
+				<div class='hobbies-block bg-lightgray section-block mx-auto' >
 					<div class='container' >
 						
 						<div class='section-header text-center' >
@@ -674,35 +674,38 @@
 										<i class='ion-ios-musical-notes' ></i>
 									</div>
 									
-									<h4>Music</h4>
+									<h4>Listening Musics</h4>
 									
 								</div>
 								
 							</div>
+							
 							
 							<div class='col-md-2 col-sm-4 col-xs-6' >
 								
 								<div class='hobby' >
 									
 									<div class='icon' >
-										<i class='ion-beer' ></i>
+										<i class='ion-ios-mic' ></i>
 									</div>
 									
-									<h4>Drinking</h4>
+									<h4>Singing</h4>
 									
 								</div>
 								
 							</div>
-							
+
+
+
 							<div class='col-md-2 col-sm-4 col-xs-6' >
 								
 								<div class='hobby' >
 									
 									<div class='icon' >
-										<i class='ion-ios-football' ></i>
+										<i class='ion-ios-film-outline' ></i>
 									</div>
 									
-									<h4>Football</h4>
+									<h4>Watching Movies</h4>
 									
 								</div>
 								
@@ -1964,7 +1967,7 @@
 						<div class='row' >
 							<div class='col-md-8 col-md-offset-2' >
 								
-								<form id='contact-form' class='contact-form' action='mail.php' method='post' data-toggle='validator' >
+								<form id='contact-form' class='contact-form' action='https://script.google.com/macros/s/AKfycbzYWybGxZfejVTtLJuIHlU8CxUhR1l1zQLOW9Jr/exec' method='post' data-toggle='validator' autocomplete="off" name="google-sheet">
 									
 									<div id='contact-form-result' ></div>
 									
@@ -1973,7 +1976,7 @@
 										<div class='col-md-6' >
 											
 											<div class='form-group' >
-												<input type='text' class='form-control' placeholder='Name' required>
+												<input type='text' class='form-control' name="name" placeholder='Name' required=""/>
 												
 												<div class='help-block with-errors' ></div>
 											</div>
@@ -1982,7 +1985,7 @@
 										
 										<div class='col-md-6' >
 											<div class='form-group' >
-												<input type='email' class='form-control' placeholder='Email' required>
+												<input type='email' class='form-control'name="email" placeholder='Email' required=""/>
 												
 												<div class='help-block with-errors' ></div>
 							
@@ -1993,31 +1996,16 @@
 									
 									<div class='row' >
 										
-										<div class='col-md-6' >
-											<div class='form-group' >
-												<input type='text' class='form-control' placeholder='Phone' required>
-												<div class='help-block with-errors' ></div>
-												
-											</div>
-										</div>
-										
-										<div class='col-md-6' >
-											<div class='form-group' >
-												<input type='text' class='form-control' placeholder='Website' required>
-												<div class='help-block with-errors' ></div>
-												
-											</div>
-										</div>
 										
 									</div>
 									
 									<div class='form-group' >
-										<textarea rows='5' class='form-control' placeholder='Message' required></textarea>
+										<textarea rows='5' class='form-control' name="message" placeholder='Message' required =""/></textarea>
 										<div class='help-block with-errors' ></div>
 									</div>
 									
 									<div class='form-group text-center' >
-										<button type='submit' class='symp-btn' >Send Message</button>
+										<button type='submit' class='symp-btn' onclick="clearForm()" >Send Message</button>
 									</div>
 									
 									
@@ -2092,6 +2080,16 @@
 			/Main Wrapper
 		===============================================================================-->
 		
+		<!--=============================================================================
+			/Mail Script
+		===============================================================================-->
+
+
+	  
+		
+
+
+
 		
 		<!--=============================================================================
 			JavaScript Files
@@ -2105,6 +2103,37 @@
 		<script src='js/validator.min.js' ></script>
 		<script src='js/smoothscroll.js' ></script>
 		<script src='js/script.js' ></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- 
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbz3pHuIgA6prV7dZNemLWZ2L46TGACOk-R8dAgfuUE7f7zbbC8/exec'
+		const form = document.forms['google-sheet'] -->
+
+		<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz3pHuIgA6prV7dZNemLWZ2L46TGACOk-R8dAgfuUE7f7zbbC8/exec'
+		const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			  .then(response => alert(swal({
+  title: "Message Sent Successfully!",
+  text: "I will Response You Soon....",
+  icon: "success",
+  button: "Thank You So Much!",
+})))
+				.catch(error => console.error('Error!', error.message))
+            });
+</script>
+
+<script>
+	function clearForm() {
+		setTimeout(function () {
+			document.getElementById("contact-form").reset();
+		}, 100);
+	}
+
+
+</script>
 		
 		
 		
