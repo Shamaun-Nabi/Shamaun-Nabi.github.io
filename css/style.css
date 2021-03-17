@@ -1678,7 +1678,9 @@ body .symp-btn{
 	color:#333;
 }
 #portfolio-filters > ul > li > a.active{
-	text-decoration:line-through;
+	/* text-decoration:line-through; */
+	color: #1fbd61;
+	border: 1 px solid rgb(14, 190, 102);
 }
 /*=======================================================================
 	Contact Section
